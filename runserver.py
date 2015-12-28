@@ -9,10 +9,12 @@ from flask import (
     Response,
     session,
     escape
+    url_for
 )
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
 users = [{'id': 1,
           'name': u'Criss Baker',
           'login': u'admin',
@@ -95,6 +97,8 @@ def logout_user():
     if not request.json or not 'id' in request.json:
         abort(400)
     return jsonify({"message": "Have a nice day!"})
+
+
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': error}), 404)
